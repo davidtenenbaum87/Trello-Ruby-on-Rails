@@ -1,0 +1,23 @@
+Trello Clone
+
+5 Models
+  - Boards
+    - has_many tasks
+    - has_many users, through tasks
+    - has_many projects
+  - Users
+    - has_many tasks
+    - has_many boards
+    - has_many comments, through tasks
+  - Tasks
+    - belongs_to user
+    - belongs_to board
+    - has_many comments
+    - has_one status
+    - belongs_to project
+  - Comments
+     - belongs_to task
+  - Status (To Do, Doing, Done)
+    - belongs_to task
+  - Projects
+    - has_many tasks
