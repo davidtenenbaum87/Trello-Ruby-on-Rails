@@ -1,0 +1,6 @@
+<%= @task.title %>
+<%= @task.project.name %>
+<% @task.comments.each do |comment| %>
+  <%= comment.content %>
+<%end%>
+<%= @task.status.status %>
