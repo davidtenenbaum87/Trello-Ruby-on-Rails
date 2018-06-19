@@ -5,6 +5,9 @@ class Task < ApplicationRecord
   belongs_to :status
 
   validates :title, presence: true
+  validates :user_id, presence: true
+  validates :status_id, presence: true
+
   
   
 end

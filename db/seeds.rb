@@ -9,9 +9,9 @@ c1 = Comment.create(content: "blah blah blah", task_id: 1, user_id: 1)
 c2 = Comment.create(content: "meh meh meh", task_id: 3, user_id: 1)
 c3 = Comment.create(content: "bleh bleh bleh", task_id: 4, user_id: 2)
 
-s1 = Status.create(status: "to do")
-s3 = Status.create(status: "doing")
-s5 = Status.create(status: "done")
+s1 = Status.create(status: "To Do")
+s2 = Status.create(status: "Doing")
+s3 = Status.create(status: "Done")
 
 t1 = Task.create(title: "t1",user_id: 1, project_id: 1, status_id: 1)
 t2 = Task.create(title: "t2",user_id: 2, project_id: 1, status_id: 1)

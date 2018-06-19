@@ -8,19 +8,19 @@ class Project < ApplicationRecord
 
   def to_dos
     self.tasks.select do |task|
-      task.status.status == "to do"
+      task.status.status == "To Do"
     end
   end
 
   def doings
     self.tasks.select do |task|
-      task.status.status == "doing"
+      task.status.status == "Doing"
     end
   end
 
   def dones
     self.tasks.select do |task|
-      task.status.status == "done"
+      task.status.status == "Done"
     end
   end
 

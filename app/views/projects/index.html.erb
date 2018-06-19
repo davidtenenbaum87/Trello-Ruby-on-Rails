@@ -4,9 +4,11 @@
     <li>
       <div class="card blue lighten-2">
         <div class="card-content white-text">
-          <span class="card-title"> <%= project.name.capitalize %> </span>
+          <span class="card-title"> <%= project.name.capitalize %> | <%= project.description %> </span>
           <div class="card-action">
-            <%= link_to "View", project%>
+            <a href="/projects/<%=project.id%>"><i class="material-icons">visibility</i></a>
+            <a href="/projects/<%=project.id%>/edit"><i class="material-icons">edit</i></a>
+            <a href="/projects/<%=project.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 <div class="container">
-    
   <h1><%= @project.name.capitalize %></h1>
+  <h3><%= @project.description %></h3>
+  <h6>Add a New Task</h6>
+  <%= render '/tasks/form' %>
   <div class="row">
     <div class="col s4"> 
       <ul class="test">
@@ -10,7 +12,9 @@
             <div class="card-content white-text">
               <span class="card-title"> <%= task.title.capitalize %> </span>
               <div class="card-action">
-                <%= link_to "View Task", task %>
+                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
               </div>
             </div>
           </li>
@@ -25,7 +29,9 @@
             <div class="card-content white-text">
               <span class="card-title"> <%= task.title.capitalize %> </span>
               <div class="card-action">
-                <%= link_to "View Task", task %>
+                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
               </div>
             </div>
           </li>
@@ -40,7 +46,9 @@
             <div class="card-content white-text">
               <span class="card-title"> <%= task.title.capitalize %> </span>
               <div class="card-action">
-                <%= link_to "View Task", task %>
+                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
               </div>
             </div>
           </li>
@@ -48,6 +56,4 @@
       </ul>
     </div>
   </div>
-    <%= render '/tasks/form' %>
-
 </div>

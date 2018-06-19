@@ -2,6 +2,8 @@
   <h4> Project: <%= @task.project.name.capitalize %>  </h4> 
   <h4> Title: <%= @task.title.capitalize %> </h4> 
   <h4> Status: <%= @task.status.status %>  </h4> 
+  <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a>
+
   <h4> Comments  </h4> 
 
   <ul>
