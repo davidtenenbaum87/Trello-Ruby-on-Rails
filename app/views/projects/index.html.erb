@@ -1,5 +1,14 @@
-<ul>
+<ul class="container">
   <% @projects.each do |project| %>
-    <li><%= link_to project.name, project %></li>
+    <li>
+      <div class="card blue lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title"> <%= project.name.capitalize %> </span>
+          <div class="card-action">
+            <%= link_to "View", project%>
+          </div>
+        </div>
+      </div>
+    </li>
   <% end %>
-</ul?>
+</ul>

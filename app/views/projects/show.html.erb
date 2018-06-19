@@ -1,28 +1,50 @@
-<h1><%= @project.name %></h1>
-
-<div class="row">
-  <div class="col s4"> 
-    <h3>To Do</h3> 
-      <ul>
+<div class="container">
+  <h1><%= @project.name.capitalize %></h1>
+  <div class="row">
+    <div class="col s4"> 
+      <ul class="test">
+      <h3>To Do</h3> 
         <% @project.to_dos.each do |task| %>
-          <li><%= link_to task.title, task %></li>
+          <li class="card blue lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title"> <%= task.title.capitalize %> </span>
+              <div class="card-action">
+                <%= link_to "View Task", task %>
+              </div>
+            </div>
+          </li>
         <% end %>
       </ul>
-  </div>
-  <div class="col s4"> 
-    <h3>Doing</h3>
-      <ul>
+    </div>
+    <div class="col s4"> 
+      <ul class="test">
+        <h3>Doing</h3>
         <% @project.doings.each do |task| %>
-          <li><%= link_to task.title, task %></li>
+          <li class="card blue lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title"> <%= task.title.capitalize %> </span>
+              <div class="card-action">
+                <%= link_to "View Task", task %>
+              </div>
+            </div>
+          </li>
         <% end %>
       </ul>
-  </div>
-  <div class="col s4">
-    <ul> 
-      <h3>Done</h3> 
-      <% @project.dones.each do |task| %>
-        <li><%= link_to task.title, task %></li>
-      <% end %>
-    </ul>
+    </div>
+    <div class="col s4">
+      <ul class="test"> 
+        <h3>Done</h3> 
+        <% @project.dones.each do |task| %>
+          <li class="card blue lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title"> <%= task.title.capitalize %> </span>
+              <div class="card-action">
+                <%= link_to "View Task", task %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
