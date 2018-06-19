@@ -2,9 +2,11 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    
   end
 
   def create
+    byebug
     @task = Task.new(task_params)
 
     if @task.valid?
@@ -31,7 +33,7 @@ class TasksController < ApplicationController
   
   private
   def task_params
-    params.require(:task).permit(:title, :user_id, :project_id)
+    params.require(:task).permit(:title, :user_id, :project_id, :status_id)
   end
   
 

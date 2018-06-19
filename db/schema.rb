@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2018_06_18_175415) do
 
   create_table "statuses", force: :cascade do |t|
     t.string "status"
-    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,9 +39,11 @@ ActiveRecord::Schema.define(version: 2018_06_18_175415) do
     t.string "title"
     t.integer "user_id"
     t.integer "project_id"
+    t.integer "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["status_id"], name: "index_tasks_on_status_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
