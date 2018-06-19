@@ -7,6 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%# Nav Bar %>
+    <div class="navbar-fixed">
+      <nav class="blue lighten-5">
+        <div class="nav-wrapper container">
+          <a href="/projects" class="brand-logo black-text">Trello but better...</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/projects/new" class="black-text">New Project</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
   </head>
 
   <body>
