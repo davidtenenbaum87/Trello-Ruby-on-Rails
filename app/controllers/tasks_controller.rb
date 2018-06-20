@@ -26,11 +26,9 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    
-      redirect_to @task
-   # fix to render if we have time
-      # render_to_string "projects/#{@task.project_id}"
-    
+    redirect_to @task
+    # fix to render if we have time
+    # render_to_string "projects/#{@task.project_id}"
   end  
 
   def show

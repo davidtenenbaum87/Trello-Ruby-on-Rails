@@ -9,6 +9,7 @@
 9. maybe add filter search box to project show page. or a dropdown.
 # 10. maybe add due date/priority to task.
 # 11. validations ??
+12. User new/edit pages
 
 If we have time...
 # Welcome Page

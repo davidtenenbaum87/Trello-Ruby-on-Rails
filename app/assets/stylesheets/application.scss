@@ -15,4 +15,15 @@
  */
 
  @import "materialize";
+
+ .logo {
+  font-family: 'Pacifico', cursive;
+ }
+
+ .custom_footer {
+  position: sticky;
+  margin-top: 500px;
+  bottom: 0;
+  width: 100%;
+ }
  

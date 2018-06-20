@@ -1,59 +1,92 @@
 <div class="container">
   <h1><%= @project.name.capitalize %></h1>
   <h3><%= @project.description %></h3>
+
+  <%# Render the new task form %>
   <h6>Add a New Task</h6>
   <%= render '/tasks/form' %>
-  <div class="row">
-    <div class="col s4"> 
-      <ul class="test">
+
+  <%# To Do List %>
+  <div class="row"> <!-- Start Materialize Row -->
+    <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
       <h3>To Do</h3> 
-        <% @project.to_dos.each do |task| %>
-          <li class="card blue lighten-2">
-            <div class="card-content white-text">
-              <span class="card-title"> <%= task.title.capitalize %> </span>
-              <div class="card-action">
-                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
-                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
-                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+
+      <%# React Sortable for to do list%>
+      <table>
+        <tbody class="sortable">  <!-- sortable target -->
+          <% @project.to_dos.each_with_sortable_id do |task, sortable_id| %>
+            <tr id="<%= sortable_id %>">  <!-- Needs id tag on sorting elements -->
+              <td>
+                <div class="card blue lighten-2">
+                  <div class="card-content white-text">
+                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <div class="card-action">
+                      <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                      <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                      <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-    <div class="col s4"> 
-      <ul class="test">
-        <h3>Doing</h3>
-        <% @project.doings.each do |task| %>
-          <li class="card blue lighten-2">
-            <div class="card-content white-text">
-              <span class="card-title"> <%= task.title.capitalize %> </span>
-              <div class="card-action">
-                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
-                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
-                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+
+
+    <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
+      <h3>Doing</h3>
+      
+      <%# React Sortable for doing list%>
+      <table>
+        <tbody class="sortable">  <!-- sortable target -->
+          <% @project.doings.each_with_sortable_id do |task, sortable_id| %>
+            <tr id="<%= sortable_id %>">  <!-- Needs id tag on sorting elements -->
+              <td>
+                <div class="card blue lighten-2">
+                  <div class="card-content white-text">
+                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <div class="card-action">
+                      <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                      <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                      <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-    <div class="col s4">
-      <ul class="test"> 
-        <h3>Done</h3> 
-        <% @project.dones.each do |task| %>
-          <li class="card blue lighten-2">
-            <div class="card-content white-text">
-              <span class="card-title"> <%= task.title.capitalize %> </span>
-              <div class="card-action">
-                <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
-                <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
-                <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+
+
+    <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
+      <h3>Done</h3> 
+
+      <%# React Sortable %>
+      <table>
+        <tbody class="sortable">  <!-- sortable target -->
+          <% @project.dones.each_with_sortable_id do |task, sortable_id| %>
+            <tr id="<%= sortable_id %>">  <!-- Needs id tag on sorting elements -->
+              <td>
+                <div class="card blue lighten-2">
+                  <div class="card-content white-text">
+                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <div class="card-action">
+                      <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
+                      <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
+                      <a href="/tasks/<%=task.id%>" data-method="delete" ><i class="material-icons">delete</i></a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-  </div>
-</div>
+
+  </div> <!-- End Materialize Row -->
+</div> <!-- End of Container Div -->

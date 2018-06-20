@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TrelloClone</title>
+    <title>Trello Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <%# Google Font%>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
 
     <%# Nav Bar %>
     <div class="navbar-fixed">
-      <nav class="blue lighten-5">
+      <nav class="blue accent-2">
         <div class="nav-wrapper container">
-          <a href="/projects" class="brand-logo black-text">Trello but better...</a>
+          <a href="/projects" class="brand-logo black-text logo">Trello 2.0</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/projects/new" class="black-text">New Project</a></li>
+            <li><a href="/projects/new" class="black-text logo">New Project</a></li>
           </ul>
         </div>
       </nav>
     </div>
+    
 
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer class="page-footer blue accent-2 custom_footer">
+    <div class="container">
+      © 2018 Copyright | David Tenenbaum & Jordan Eckowitz
+    </div>
+  </div>
+</footer>
 </html>

@@ -7,20 +7,20 @@ class Project < ApplicationRecord
 
 
   def to_dos
-    self.tasks.select do |task|
-      task.status.status == "To Do"
+    Task.order(:sort).all.select do |task|
+      task.status.status == "To Do" && task.project == self
     end
   end
 
   def doings
-    self.tasks.select do |task|
-      task.status.status == "Doing"
+    Task.order(:sort).all.select do |task|
+      task.status.status == "Doing" && task.project == self
     end
   end
 
   def dones
-    self.tasks.select do |task|
-      task.status.status == "Done"
+    Task.order(:sort).all.select do |task|
+      task.status.status == "Done" && task.project == self
     end
   end
 

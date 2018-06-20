@@ -5,6 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.belongs_to :user
       t.belongs_to :project
       t.belongs_to :status
+      t.integer :sort  # for RailsSortable
       t.timestamps
     end
   end
