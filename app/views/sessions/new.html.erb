@@ -1,9 +1,23 @@
-<% if flash[:notice] %>
-  <br>
-  <div class="notice alert_box"><%= flash[:notice] %></div>
-<% end %>
+<div class="cotainer">
 
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
-<% end %>
+  <% if flash[:notice] %>
+    <br>
+    <div class="notice alert_box"><%= flash[:notice] %></div>
+  <% end %>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+  <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+
+
+
+</div>

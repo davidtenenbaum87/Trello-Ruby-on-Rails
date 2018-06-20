@@ -1,5 +1,8 @@
-jordan = User.create(name: "jordan")
-david = User.create(name: "david")
+# password = 123
+jordan = User.create(name: "jordan", email: "jordan@gmail.com",password_digest: "$2a$10$MiXMuYVRank4dq4kSbWO0uCAzu6vT/YryLs5z3QOaLmJoR9QbTMwm")
+
+# password = 123
+david = User.create(name: "david", email: "david@gmail.com", password_digest: "$2a$10$BFPmwyPm1cJDnEf2gZuBbeDYVkx6vQyhSwc1fiD5dHwQeYHleC.bW")
 
 laundry = Project.create(name: "laundry", description: "wash my clothes")
 cleaning = Project.create(name: "cleaning", description: "clean my room")

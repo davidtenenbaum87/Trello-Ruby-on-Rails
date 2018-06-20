@@ -21,7 +21,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="/projects/new" class="black-text logo">New Project</a></li>
             <% if logged_in? %>
-              <li> <%= link_to "Log out", logout_path, method: :delete %> </li>
+             <li><a href="/logout" class="black-text logo" data-method="delete">Log Out</a></li>
             <% end %>
           </ul>
         </div>

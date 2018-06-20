@@ -4,7 +4,7 @@
 # 4. add task to project show page.
 # 5. assign new user to a task.
 6. user profile page displaying: all projects and tasks assigned to self.
-7. authentication
+# 7. authentication
 # 8. maybe add description to project table.
 9. maybe add filter search box to project show page. or a dropdown.
 # 10. maybe add due date/priority to task.

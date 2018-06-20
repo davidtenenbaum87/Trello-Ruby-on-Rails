@@ -1,16 +1,20 @@
 class SessionsController < ApplicationController
 
+  skip_before_action :authenticate_check, :only => [:new, :create]
+
+
+
   def new
     @user = User.new
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    if @user && @user.authenticate
+    @user = User.find_by(email: params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
       log_in(@user)
       redirect_to '/projects'
     else
-      flash[:notice] = "Wrong Username/Password"
+      flash[:notice] = "Wrong Email/Password"
       redirect_to '/login'
     end
   end
@@ -22,7 +26,7 @@ class SessionsController < ApplicationController
 
   # private
   # def user_params
-  #   params.require(:user).permit(:name)
+  #   params.require(:user).permit(:email, :password)
   # end
 
 end

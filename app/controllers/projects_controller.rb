@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  # skip_before_action :project_access?, :only => [:new, :create, :index]
+
   def index
     @user = User.find_by(id: session[:user_id])
     @projects = @user.projects
@@ -45,6 +47,5 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :description)
   end 
-    
 
 end
