@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+  <br>
+  <div class="notice alert_box"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <input name=name>
+  <input type=submit value='login'>
+<% end %>

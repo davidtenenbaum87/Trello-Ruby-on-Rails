@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all
+    @user = User.find_by(id: session[:user_id])
+    @projects = @user.projects
   end
   
   def show
