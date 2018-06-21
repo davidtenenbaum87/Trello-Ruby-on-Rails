@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
-      log_in(@user)
+      log_in_user!(@user.id)
       redirect_to '/projects'
     else
       flash[:notice] = "Wrong Email/Password"
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out_user
+    log_out_user!
     redirect_to '/login'
   end
 

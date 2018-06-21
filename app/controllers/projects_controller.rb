@@ -6,29 +6,29 @@ class ProjectsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @projects = @user.projects
   end
-  
+
   def show
     @project = Project.find(params[:id])
     @task = Task.new
   end
 
-  def new 
+  def new
     @project = Project.new
-  end 
+  end
 
   def create
     @project = Project.new(project_params)
     if @project.valid?
       @project.save
       redirect_to @project
-    else 
+    else
       render :new
     end
   end
 
-  def edit 
+  def edit
     @project = Project.find(params[:id])
-  end 
+  end
 
   def update
     @project = Project.find(params[:id])
@@ -42,10 +42,10 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
-  private 
-  
+  private
+
   def project_params
     params.require(:project).permit(:name, :description)
-  end 
+  end
 
 end
