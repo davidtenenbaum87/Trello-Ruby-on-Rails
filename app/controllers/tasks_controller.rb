@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
     if @task.valid?
       @task.save
+      @userproject = UserProject.create(user_id: task_params[:user_id], project_id: task_params[:project_id])
       redirect_to @task
     else
       @project = Project.all.find(task_params[:project_id])

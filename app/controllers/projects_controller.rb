@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @user = User.find_by(id: session[:user_id])
-    @projects = @user.projects
+    @projects = @user.projects.uniq
   end
 
   def show
@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.valid?
       @project.save
+      @userproject = UserProject.create(user_id: session[:user_id], project_id: @project.id)
       redirect_to @project
     else
       render :new

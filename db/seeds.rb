@@ -21,3 +21,7 @@ t2 = Task.create(title: "t2",user_id: 2, project_id: 1, status_id: 1)
 t3 = Task.create(title: "t3",user_id: 1, project_id: 3, status_id: 3)
 t4 = Task.create(title: "t4",user_id: 2, project_id: 2, status_id: 3)
 t5 = Task.create(title: "t5",user_id: 1, project_id: 2, status_id: 2)
+
+up1 = UserProject.create(user_id: 1, project_id: 1)
+up2 = UserProject.create(user_id: 2, project_id: 2)
+up3 = UserProject.create(user_id: 2, project_id: 1)
