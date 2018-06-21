@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trello Clone</title>
+    <title>Trello 2.0</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,10 @@
     <%# Google Font%>
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Song+Myung" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Song+Myung" rel="stylesheet">
+
+    <%# Favicon %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
 
     <%# Nav Bar %>
     <div class="navbar-fixed">
@@ -24,6 +27,8 @@
               <li><a href="/projects/new" class="black-text custom_header">New Project</a></li>
               <li><a href="/users/<%= session[:user_id] %>" class="black-text custom_header">Profile</a></li>
               <li><a href="/logout" class="black-text custom_header" data-method="delete">Log Out (<%=User.find(session[:user_id]).name.capitalize %>)</a></li>
+            <% else %>
+              <li><a href="/login" class="black-text custom_header">Login</a></li>
             <% end %>
           </ul>
         </div>

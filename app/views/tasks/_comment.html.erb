@@ -1,6 +1,11 @@
   <%= form_for @comment do |f| %>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  
+    <%= f.label :content %><br>
+    <div class="emoji-picker-container comment_box">  
+      <%= f.text_area :content, class: 'form-control', data: { emojiable: true } %>
+    </div>
+    
+
 
     <%= f.hidden_field :user_id, :value => session[:user_id] %>
     <%= f.hidden_field :task_id, :value => @task.id %>

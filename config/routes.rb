@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  
   resources :projects
   resources :statuses
   resources :comments
   resources :tasks
   resources :users
 
+  get '/' => 'welcome#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'

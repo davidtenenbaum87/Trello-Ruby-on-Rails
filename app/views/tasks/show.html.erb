@@ -3,15 +3,16 @@
   <h5> Task Name: <%= @task.title.capitalize %></h5><br>
   <h5> Assigned User: <%= @task.user.name.capitalize %></h5>
   <h5> Status: <%= @task.status.status %></h5><br> 
-  <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a>
+  <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a> <br><br>
 
+  
   <h5>Comments: </h5> 
 
   <ul>
     <% @task.comments.each do |comment| %>
-      <li class="task_border">
-        <%= comment.content %> <br>
-        <strong> <%= comment.user.name.capitalize %> (<%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %>) </strong>
+      <li class="task_border comment_font_content">
+        <%= content_with_emoji(comment.content) %> <br>
+        <strong class="comment_font_details"> <%= comment.user.name.capitalize %> (<%= comment.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y at %I:%M%p") %>) </strong>
       </li>
     <%end%>
   </ul>

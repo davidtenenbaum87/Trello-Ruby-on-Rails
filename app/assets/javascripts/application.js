@@ -21,6 +21,8 @@
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable
 
+//= require rails_emoji_picker
+
 $(function() {
   $('.sortable').railsSortable();
 });
