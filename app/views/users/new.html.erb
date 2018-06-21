@@ -1,12 +1,24 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container">
+  <% if flash[:notice] %>
+    <br>
+    <div class="notice alert_box"> <i class="material-icons alert_box">warning</i> <%= flash[:notice] %></div>
+  <% end %>
+</div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+<div class="container"> <br>
+  <%= form_for(@user) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.submit "Create my account", class: "btn" %>
-<% end %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= button_tag(type: 'submit', class: "btn deep-purple darken-4") do %>
+      <i class="material-icons right">send</i> Create Account
+    <% end %>
+
+  <% end %>
+</div>

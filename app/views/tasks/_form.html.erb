@@ -4,7 +4,11 @@
   <%# Insert dropdown of Status here... %>
   <%= f.collection_select :status_id, Status.all, :id, :status, { prompt: "Choose a Status" }, class: "browser-default" %> <br>
   <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Assign a User" }, class: "browser-default" %>
-  <%= f.hidden_field :project_id, :value => @project.id %> <br>
-  <%= f.submit %>
+  <%= f.hidden_field :project_id, :value => @project.id%> <br>
+  <%= f.submit class:"btn deep-purple darken-4" %>
 <% end %>
+
+  
+  
+
 

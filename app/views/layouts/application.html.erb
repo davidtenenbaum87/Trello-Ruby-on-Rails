@@ -11,7 +11,8 @@
 
     <%# Google Font%>
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Song+Myung" rel="stylesheet">
 
     <%# Nav Bar %>
     <div class="navbar-fixed">
@@ -20,9 +21,9 @@
           <a href="/projects" class="brand-logo black-text logo">Trello 2.0</a>
           <ul class="right hide-on-med-and-down">
             <% if logged_in? %>
-              <li><a href="/projects/new" class="black-text logo">New Project</a></li>
-              <li><a href="/users/<%= session[:user_id] %>" class="black-text logo">Profile</a></li>
-              <li><a href="/logout" class="black-text logo" data-method="delete">Log Out (<%=User.find(session[:user_id]).name.capitalize %>)</a></li>
+              <li><a href="/projects/new" class="black-text custom_header">New Project</a></li>
+              <li><a href="/users/<%= session[:user_id] %>" class="black-text custom_header">Profile</a></li>
+              <li><a href="/logout" class="black-text custom_header" data-method="delete">Log Out (<%=User.find(session[:user_id]).name.capitalize %>)</a></li>
             <% end %>
           </ul>
         </div>
@@ -32,7 +33,7 @@
 
   </head>
 
-  <body>
+  <body class="custom_background">
     <%= yield %>
   </body>
 

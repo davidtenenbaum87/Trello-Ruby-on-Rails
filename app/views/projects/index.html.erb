@@ -1,6 +1,5 @@
 <ul class="container">
-  <h1>welcome <%= @user.name %></h1>
-  <h3> Project Index </h3>
+  <h4 class="custom_header">Welcome <%= @user.name.capitalize %>, here's your projects! </h4> <br>
   <% @projects.each do |project| %>
     <li>
       <div class="card blue lighten-2">

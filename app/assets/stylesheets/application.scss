@@ -17,13 +17,27 @@
  @import "materialize";
 
  .logo {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Indie Flower', cursive;
  }
 
+ .custom_header {
+  font-family: 'Poiret One', cursive;
+  }
+
  .custom_footer {
+  text-align: center;
+  color: black;
   position: sticky;
   margin-top: 500px;
   bottom: 0;
   width: 100%;
+ }
+
+ .custom_background {
+  background: linear-gradient(white, rgba(128, 128, 128, 0.301));
+ }
+
+ * {
+  font-family: 'Poiret One', cursive;
  }
  
