@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   
   def update
     @task = Task.find(params[:id])
+    @userproject = UserProject.create(user_id: task_params[:user_id], project_id: task_params[:project_id])
     @task.update(task_params)
     redirect_to @task
     # fix to render if we have time

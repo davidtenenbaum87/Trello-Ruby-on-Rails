@@ -39,7 +39,11 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    @project.user_projects.each do |userproject|
+      if userproject.user_id == session[:user_id]
+        userproject.destroy
+      end
+    end
     redirect_to projects_path
   end
 
