@@ -1,5 +1,5 @@
 <div class="container">
-  <h5> Project Name: <%= @project.name.capitalize %></h5>
+  <h5> Project Name: <%= @project.name.titleize %></h5>
   <h5> Project Description: <%= @project.description %></h5> <br>
 
   <%# Render the new task form %>
@@ -19,7 +19,7 @@
               <td>
                 <div class="card blue lighten-2">
                   <div class="card-content white-text">
-                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <span class="card-title"> <%= task.title.titleize %> </span>
                     <div class="card-action">
                       <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
                       <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
@@ -46,7 +46,7 @@
               <td>
                 <div class="card blue lighten-2">
                   <div class="card-content white-text">
-                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <span class="card-title"> <%= task.title.titleize %> </span>
                     <div class="card-action">
                       <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
                       <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>
@@ -73,7 +73,7 @@
               <td>
                 <div class="card blue lighten-2">
                   <div class="card-content white-text">
-                    <span class="card-title"> <%= task.title.capitalize %> </span>
+                    <span class="card-title"> <%= task.title.titleize %> </span>
                     <div class="card-action">
                       <a href="/tasks/<%=task.id%>"><i class="material-icons">visibility</i></a>
                       <a href="/tasks/<%=task.id%>/edit"><i class="material-icons">edit</i></a>

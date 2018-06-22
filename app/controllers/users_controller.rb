@@ -13,7 +13,12 @@ class UsersController < ApplicationController
       @user.save
       redirect_to login_path
     else
-      flash[:notice] = "Please fill in all fields"
+      email_match = User.all.find {|user| user.email == user_params[:email]}
+      if email_match
+        flash[:notice] = "Email already exists"
+      else
+        flash[:notice] = "Please fill in all fields"
+      end
       render :new
     end
   end
