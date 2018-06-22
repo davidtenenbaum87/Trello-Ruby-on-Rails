@@ -1,7 +1,7 @@
 <ul class="container">
   
   <% if @user.projects.length > 0 %>
-    <h4 class="custom_header">Welcome <%= @user.name.capitalize %>! here's your projects: </h4> <br>
+    <h4 class="custom_header">Welcome <%= @user.name.capitalize %>! Here's your projects: </h4> <br>
   <% else %>
     <h4 class="custom_header">Welcome <%= @user.name.capitalize %>! Click 'New Project' to get started! </h4> <br>
   <% end %>

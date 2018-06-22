@@ -1,9 +1,10 @@
 <div class="container">
-  <h5> Project: <%= @task.project.name.capitalize %></h5> 
-  <h5> Task Name: <%= @task.title.capitalize %></h5><br>
-  <h5> Assigned User: <%= @task.user.name.capitalize %></h5>
+  <h5> Project: <%= @task.project.name.titleize %></h5> 
+  <h5> Task Name: <%= @task.title.titleize %></h5><br>
+  <h5> Assigned User: <%= @task.user.name.titleize %></h5>
   <h5> Status: <%= @task.status.status %></h5><br> 
-  <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a> <br><br>
+  <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a>
+  <a href="/tasks/<%=@task.id%>/edit" class="waves-effect waves-light btn">Edit Task</a>
 
   
   <h5>Comments: </h5> 

@@ -1,7 +1,7 @@
 <div class="container"> <br>
   <ul class="collection with-header">
     <li class="collection-header center"><h4>Profile</h4></li>
-    <li class="collection-item">Name: <%= @user.name.capitalize %></li>
+    <li class="collection-item">Name: <%= @user.name.titleize %></li>
     <li class="collection-item">Email: <%= @user.email %></li>
     <li class="collection-item">Member Since: <%= @user.created_at.strftime("%m/%d/%Y") %></li>
   </ul>       
@@ -9,14 +9,14 @@
   <h5> Projects & Tasks </h5>
   <div class="row">
     <% @projects.uniq.each do |project| %>
-      <div class="col s6">
+      <div class="col s12">
         <div class="card">
           <div class="card-content">
-            <%= link_to project.name.capitalize, project %>
+            <%= link_to project.name.titleize, project %>
               <div class="card-action">
               <% project.tasks.each do |task| %>
                 <% if task.user_id == session[:user_id] %>
-                  <%= link_to task.title.capitalize, task %> <br>
+                  <%= link_to "#{task.title.titleize} (#{task.status.status})", task %> <br>
                 <% end%>
               <% end %>
               </div>
