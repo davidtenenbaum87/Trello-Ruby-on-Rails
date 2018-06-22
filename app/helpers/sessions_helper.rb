@@ -28,5 +28,4 @@ module SessionsHelper
     User.find_by(id: logged_in_user_id_integer)
   end
 
-
 end

@@ -1,9 +1,11 @@
 <%= form_for @task do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <%# Insert dropdown of Status here... %>
+  <%# Status dropdown list %>
   <%= f.collection_select :status_id, Status.all, :id, :status, { prompt: "Choose a Status" }, class: "browser-default" %> <br>
-  <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Assign a User" }, class: "browser-default" %>
+  <%# User dropdown list %>
+  <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Assign a User" }, class: "browser-default"%>
+  <%# Assigns task to current project - hidden field %>
   <%= f.hidden_field :project_id, :value => @project.id%> <br>
   <%= f.submit class:"btn deep-purple darken-4" %>
 <% end %>

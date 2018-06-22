@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
 
+  # Skips authentication check for new and create since you're not logged in when viewing these pages.
   skip_before_action :authenticate_check, :only => [:new, :create]
-
-
 
   def new
     @user = User.new
@@ -23,10 +22,5 @@ class SessionsController < ApplicationController
     log_out_user!
     redirect_to '/login'
   end
-
-  # private
-  # def user_params
-  #   params.require(:user).permit(:email, :password)
-  # end
 
 end

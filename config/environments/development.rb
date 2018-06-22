@@ -59,6 +59,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # Added this to get rid of red highlighting of error fields on sign-up page
   config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
     html_tag
   }

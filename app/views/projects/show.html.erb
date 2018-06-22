@@ -11,7 +11,7 @@
     <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
       <h3>To Do</h3> 
 
-      <%# React Sortable for to do list%>
+      <%# Rails Sortable for to do list%>
       <table>
         <tbody class="sortable">  <!-- sortable target -->
           <% @project.to_dos.each_with_sortable_id do |task, sortable_id| %>
@@ -38,7 +38,7 @@
     <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
       <h3>Doing</h3>
       
-      <%# React Sortable for doing list%>
+      <%# Rails Sortable for doing list%>
       <table>
         <tbody class="sortable">  <!-- sortable target -->
           <% @project.doings.each_with_sortable_id do |task, sortable_id| %>
@@ -65,7 +65,7 @@
     <div class="col s4"> <!-- Materialize Grid (row total = 12) -->
       <h3>Done</h3> 
 
-      <%# React Sortable %>
+      <%# Rails Sortable %>
       <table>
         <tbody class="sortable">  <!-- sortable target -->
           <% @project.dones.each_with_sortable_id do |task, sortable_id| %>

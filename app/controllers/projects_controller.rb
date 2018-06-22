@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 
+  # calls project_access method to ensure user is authorized to view the project. See method below. 
   before_action :project_access, :only => [:show]
 
   def index
@@ -53,6 +54,7 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :description)
   end
 
+  # First checks if project id exists in database. If it does then checks for user access to project. If either fails then redirect to index page. 
   def project_access
 
     if Project.all.length < params[:id].to_i

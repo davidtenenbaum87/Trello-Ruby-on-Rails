@@ -28,8 +28,6 @@ class TasksController < ApplicationController
     @userproject = UserProject.create(user_id: task_params[:user_id], project_id: task_params[:project_id])
     @task.update(task_params)
     redirect_to @task
-    # fix to render if we have time
-    # render_to_string "projects/#{@task.project_id}"
   end  
 
   def show
@@ -38,18 +36,16 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    # byebug
     @task = Task.find(params[:id])
     @project = @task.project_id
     @task.destroy
     redirect_to project_path(@project)
   end
   
-  
   private
+
   def task_params
     params.require(:task).permit(:title, :user_id, :project_id, :status_id)
   end
-  
 
 end

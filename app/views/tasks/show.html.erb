@@ -5,7 +5,6 @@
   <h5> Status: <%= @task.status.status %></h5><br> 
   <a href="/projects/<%=@task.project_id%>" class="waves-effect waves-light btn">Back to Project</a>
   <a href="/tasks/<%=@task.id%>/edit" class="waves-effect waves-light btn">Edit Task</a>
-
   
   <h5>Comments: </h5> 
 
@@ -17,5 +16,7 @@
       </li>
     <%end%>
   </ul>
+
   <%= render 'comment' %>
+  
 </div>

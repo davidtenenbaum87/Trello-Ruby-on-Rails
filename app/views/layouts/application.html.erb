@@ -5,24 +5,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <%# Google Font%>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <%# Google Fonts %>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One|Song+Myung" rel="stylesheet">
 
-    <%# Favicon %>
+    <%# Favicon - Icon in browser tab %>
     <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
 
-    <%# Nav Bar %>
+    <%# Nav Bar - Using MaterializeCSS navbar %>
     <div class="navbar-fixed">
       <nav class="blue accent-2">
         <div class="nav-wrapper container">
           <a href="/projects" class="brand-logo black-text logo">Trello 2.0</a>
           <ul class="right hide-on-med-and-down">
+            <%# If user is logged in then show buttons below %>
             <% if logged_in? %>
               <li><a href="/projects/new" class="black-text custom_header">New Project</a></li>
               <li><a href="/users/<%= session[:user_id] %>" class="black-text custom_header">Profile</a></li>

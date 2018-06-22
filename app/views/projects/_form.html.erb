@@ -1,10 +1,9 @@
+<%= form_for @project do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= form_for @project do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description %> <br> <br>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %> <br> <br>
-
-    <%= f.submit class:"btn deep-purple darken-4" %>
-  <% end %>
+  <%= f.submit class:"btn deep-purple darken-4" %>
+<% end %>

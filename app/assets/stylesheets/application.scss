@@ -17,14 +17,17 @@
  @import "materialize";
  @import 'rails_emoji_picker';
 
+//  Trello 2.0 Logo font
  .logo {
   font-family: 'Indie Flower', cursive;
  }
 
+//  Font for buttons on nav bar
  .custom_header {
   font-family: 'Poiret One', cursive;
   }
 
+// Footer CSS styling
  .custom_footer {
   text-align: center;
   color: black;
@@ -36,10 +39,12 @@
   width: 100%;
  }
 
+//  Background gradient styling
  .custom_background {
   background: linear-gradient(white, rgba(128, 128, 128, 0.301));
  }
 
+//  Applies font to entire project (all HTML tag types)
  * {
   font-family: 'Poiret One', cursive;
  }

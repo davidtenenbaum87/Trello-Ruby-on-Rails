@@ -1,12 +1,13 @@
 <ul class="container">
   
+  <%# Changes welcome message depending on whether or not user has projects %>
   <% if @user.projects.length > 0 %>
     <h4 class="custom_header">Welcome <%= @user.name.capitalize %>! Here's your projects: </h4> <br>
   <% else %>
     <h4 class="custom_header">Welcome <%= @user.name.capitalize %>! Click 'New Project' to get started! </h4> <br>
   <% end %>
   
-  
+  <%# Displays user's projects %>
   <% @projects.each do |project| %>
     <li>
       <div class="card blue lighten-2">

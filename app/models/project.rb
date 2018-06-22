@@ -1,12 +1,9 @@
 class Project < ApplicationRecord
   has_many :tasks
-  # has_many :users, through: :tasks
   has_many :user_projects
   has_many :users, through: :user_projects
 
-  # validates :name, uniqueness: true
   validates :name, presence: true
-
 
   def to_dos
     Task.order(:sort).all.select do |task|

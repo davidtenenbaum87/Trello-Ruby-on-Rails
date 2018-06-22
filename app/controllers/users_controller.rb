@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
+  
+  # Skips authentication check for new and create since you're not logged in when viewing these pages.
   skip_before_action :authenticate_check, :only => [:new, :create]
-
 
   def new
     @user = User.new
@@ -30,10 +30,9 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name,:email,:password)
   end
-
-
 
 end

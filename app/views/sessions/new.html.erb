@@ -1,3 +1,4 @@
+<%# Shows error message if one exists %>
 <div class="container">
   <% if flash[:notice] %>
     <br>
@@ -7,17 +8,16 @@
 
 <div class="container"> <br>
 <%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control' %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
-
-    <%= button_tag(type: 'submit', class: "btn deep-purple darken-4") do %>
-      <i class="material-icons right">send</i> Sign In
-    <% end %>
+  <%= button_tag(type: 'submit', class: "btn deep-purple darken-4") do %>
+    <i class="material-icons right">send</i> Sign In
   <% end %>
+<% end %>
 
 <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
 
