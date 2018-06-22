@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  # skip_before_action :project_access?, :only => [:new, :create, :index]
+  before_action :project_access, :only => [:show]
 
   def index
     @user = User.find_by(id: session[:user_id])
@@ -51,6 +51,19 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :description)
+  end
+
+  def project_access
+
+    if Project.all.length < params[:id].to_i
+      redirect_to action: "index"
+    else
+      @users = Project.find(params[:id]).users
+      user_check = @users.find do |user|
+        user.id == session[:user_id]
+      end 
+      redirect_to action: "index" unless user_check
+    end
   end
 
 end
