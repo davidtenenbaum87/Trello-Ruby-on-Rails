@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   # Skips authentication check for new and create since you're not logged in when viewing these pages.
-  skip_before_action :authenticate_check, :only => [:new, :create]
+  skip_before_action :authenticate_check, :only => [:new, :create, :destroy]
 
   def new
     @user = User.new
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out_user!
-    redirect_to '/login'
+    redirect_to '/goodbye'
   end
 
 end

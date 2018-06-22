@@ -1,0 +1,28 @@
+// Place all the styles related to the goodbye controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#goodbye {
+  background: linear-gradient(79deg, #2a3199, #20a2b0, #b22db9);
+  background-size: 600% 600%;
+
+  -webkit-animation: goodbye_gradient 30s ease infinite;
+  -moz-animation: goodbye_gradient 30s ease infinite;
+  animation: goodbye_gradient 30s ease infinite;
+}
+
+@-webkit-keyframes goodbye_gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes goodbye_gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes goodbye_gradient { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
